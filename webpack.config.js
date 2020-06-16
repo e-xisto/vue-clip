@@ -1,6 +1,7 @@
 'use strict'
 
 const UnminifiedWebpackPlugin = require('unminified-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './index.js',
@@ -22,11 +23,16 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
+      },
+	  {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
   plugins: [
-    new UnminifiedWebpackPlugin()
+    new UnminifiedWebpackPlugin(),
+	new VueLoaderPlugin()
   ],
   resolve: {
     alias: {

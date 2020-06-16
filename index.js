@@ -1,6 +1,6 @@
 'use strict'
 
-import Clip from './src/components/Clip/index.js'
+import Clip from './src/components/Clip/index.vue'
 
 const VueClip = {
   install (Vue) {
